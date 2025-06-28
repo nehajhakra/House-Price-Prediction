@@ -1,145 +1,144 @@
-🏡 Project Title: House Price Prediction Using Supervised Machine Learning
-📖 Overview
-This project showcases the complete end-to-end implementation of a regression-based machine learning system to predict housing prices using key property features. Leveraging Python’s data science stack, the model provides insights into what influences house pricing and demonstrates proficiency in real-world data handling, model building, evaluation, and storytelling through data.
+# 🏡 House Price Prediction Using Supervised Machine Learning
 
-It is ideal for recruiters or professionals seeking practical applications of ML concepts like regression, data preprocessing, exploratory data analysis (EDA), and model evaluation.
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Regression-yellow.svg)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
-🧠 Problem Statement
-Predicting house prices accurately is a critical task in the real estate sector, enabling buyers, sellers, and investors to make informed decisions. By analyzing features like living space, garage area, overall quality, and neighborhood, we aim to build a robust machine learning model that can forecast the selling price of a house.
+---
 
-🎯 Objectives
-✅ Load, clean, and preprocess a real-world housing dataset
+## 📖 Overview
 
-✅ Explore feature relationships through statistical summaries and visualizations
+This project presents an end-to-end supervised machine learning solution to predict house prices based on multiple real-estate features such as living area, garage size, number of bedrooms, year built, and more. Using regression algorithms, the model helps forecast house prices and provides insights into which features impact property value the most.
 
-✅ Apply regression algorithms (Linear & Random Forest)
+---
 
-✅ Compare model performance using RMSE, MAE, and R² Score
+## 🎯 Objectives
 
-✅ Visualize results to enhance model interpretability
+- 🔍 Understand and explore the dataset through EDA
+- 🧹 Clean and preprocess the data including encoding categorical values
+- 🧠 Build regression models using Linear Regression and Random Forest
+- 📊 Evaluate model performance using RMSE, MAE, and R² score
+- 📈 Visualize model predictions and feature correlations
+- 📁 Organize the project with a professional folder structure
 
-✅ Demonstrate core concepts of supervised learning
+---
 
-🧰 Tech Stack Used
-Category	Tools / Libraries
-Language	Python
-Data Handling	Pandas, NumPy
-Visualization	Matplotlib, Seaborn
-ML Models	scikit-learn (LinearRegression, RandomForestRegressor)
-Encoding	LabelEncoder
-Evaluation	RMSE, MAE, R² Score
-Notebook	Jupyter
+## 🧰 Tech Stack Used
 
-📊 Dataset Information
-Source: Kaggle - House Prices: Advanced Regression Techniques
+| Category       | Tools / Libraries                          |
+|----------------|---------------------------------------------|
+| Language       | Python 3.8+                                 |
+| Data Handling  | Pandas, NumPy                               |
+| Visualization  | Matplotlib, Seaborn                         |
+| ML Algorithms  | Scikit-learn (LinearRegression, RandomForestRegressor) |
+| Encoding       | LabelEncoder                                |
+| Evaluation     | R², MAE, RMSE                               |
+| Notebook       | Jupyter Notebook                            |
 
-Format: .xlsx with 500 records and 10 columns
+---
 
-Target Variable: SalePrice
+## 📊 Dataset Details
 
-Key Features: LotArea, GrLivArea, GarageArea, BedroomAbvGr, FullBath, HalfBath, YearBuilt, OverallQual, and Neighborhood
+- **Source**: [Kaggle: House Prices - Advanced Regression Techniques](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data)
+- **Format**: `.xlsx`
+- **Rows**: 500
+- **Columns**: 10
+- **Target**: `SalePrice`
 
-📌 Project Workflow
-1. Data Exploration & Cleaning
-Verified dataset structure and types
+**Features used**:
+- `LotArea`
+- `YearBuilt`
+- `BedroomAbvGr`
+- `GarageArea`
+- `GrLivArea`
+- `FullBath`
+- `HalfBath`
+- `OverallQual`
+- `Neighborhood` (encoded)
 
-Ensured no missing values
+---
 
-Encoded categorical feature (Neighborhood) using LabelEncoder
+## 🧠 ML Workflow
 
-2. Feature Engineering
-Selected relevant features for regression modeling
+### 🔹 Step 1: Load & Explore the Data
+- Loaded using `pandas.read_excel()`
+- Verified data types, structure, and basic stats
 
-Normalized features where needed
+### 🔹 Step 2: Data Cleaning
+- No missing values in the sample
+- Encoded `Neighborhood` using `LabelEncoder`
 
-Converted categorical to numerical for model compatibility
+### 🔹 Step 3: EDA (Exploratory Data Analysis)
+- Correlation Heatmap
+- Scatter Plots for `GrLivArea`, `GarageArea` vs `SalePrice`
+- Boxplot for `OverallQual` vs `SalePrice`
 
-3. Exploratory Data Analysis (EDA)
-Generated:
+### 🔹 Step 4: Model Building
+- **Linear Regression**
+- **Random Forest Regressor**
 
-📌 Correlation heatmap to identify strong predictors of price
+### 🔹 Step 5: Model Evaluation
 
-📈 Scatter plots between GrLivArea, GarageArea, and SalePrice
+| Model              | R² Score | MAE         | RMSE        |
+|-------------------|----------|-------------|-------------|
+| Linear Regression | -0.049   | ₹86,483     | ₹100,146    |
+| Random Forest     | -0.307   | ₹95,495     | ₹111,782    |
 
-📦 Boxplots of OverallQual vs SalePrice
+⚠️ *Note: This was a small sample dataset (500 rows), so performance is limited. Larger datasets and tuning would improve results.*
 
-4. Model Building
-Used two supervised learning algorithms:
+---
 
-🔹 Linear Regression
+## 📈 Visualizations
 
-🔸 Random Forest Regressor
+| Plot Type                       | Description                            |
+|----------------------------------|----------------------------------------|
+| 📊 Correlation Heatmap          | To identify relationships between variables |
+| 📉 Actual vs Predicted Plot     | To assess model predictions             |
+| 📦 Boxplot                      | Showcasing Overall Quality vs Sale Price |
+| 📈 Scatterplots                 | GarageArea / GrLivArea vs Sale Price    |
 
-5. Model Evaluation
-Evaluated with:
+All charts are available in the `assets/` folder for preview.
 
-R² Score
+---
 
-Mean Absolute Error (MAE)
+## 📁 Project Structure
 
-Root Mean Squared Error (RMSE)
-
-Model	R² Score	MAE	RMSE
-Linear Regression	-0.049	86,483 ₹	100,146 ₹
-Random Forest	-0.307	95,495 ₹	111,782 ₹
-
-⚠️ Note: Performance is limited due to small synthetic sample (500 rows). Results will improve with hyperparameter tuning and richer datasets.
-
-6. Visualization of Predictions
-📉 Plotted Actual vs Predicted prices
-
-📊 Visualized residuals to assess prediction spread
-
-📁 Repository Structure
-kotlin
-Copy
-Edit
 house-price-prediction-ml/
 │
 ├── 📁 data/
-│   └── house_price_sample.xlsx
+│ └── house_price_sample.xlsx # Dataset
 │
 ├── 📁 notebooks/
-│   └── house_price_prediction.ipynb
+│ └── house_price_prediction.ipynb # Main notebook
 │
 ├── 📁 assets/
-│   ├── heatmap.png
-│   ├── actual_vs_predicted.png
-│   └── boxplot_overallqual.png
-│
-
-├── 📄 README.md
-├── 📄 requirements.txt
-└── 📄 .gitignore
-
-🧪 Key Learnings
-✅ Practical knowledge of applying regression techniques to structured data
-✅ Learned feature engineering and handling of categorical variables
-✅ Explored the role of EDA in understanding data behavior
-✅ Compared model performance on real-world data
-✅ Understood the value of model interpretability using visual analysis
-
-🚀 How to Run the Project
-Clone the repository:
+│ ├── heatmap.png
+│ ├── actual_vs_predicted.png
+│ └── boxplot_overallqual.png # Visual outputs
 
 
-git clone https://github.com/yourusername/house-price-prediction-ml.git
+---
+
+## 🧪 Key Learnings
+
+- ✅ Learned how to apply **Supervised Learning** for real-world problems
+- ✅ Understood the difference in performance between **Linear** and **Ensemble** models
+- ✅ Practiced **feature encoding** and **data visualization**
+- ✅ Gained experience in **model evaluation** using multiple metrics
+- ✅ Improved storytelling through **data plots and insights**
+
+---
+
+## 🚀 How to Run the Project
+
+1. **Clone the Repository**
+```bash
+git clone https://github.com/your-username/house-price-prediction-ml.git
 cd house-price-prediction-ml
-Install dependencies:
 
-pip install -r requirements.txt
-Launch Jupyter Notebook:
+ Connect With Me
+👩‍💼 LinkedIn: Neha Jhakra
 
-jupyter notebook notebooks/house_price_prediction.ipynb
-💼 Perfect For:
-👩‍💻 Showcasing ML skills in interviews
+💻 GitHub: @nehajhakra
 
-🌐 Building your data science portfolio
-
-📈 Sharing as a featured project on LinkedIn
-
-🔗 Let’s Connect
-🌐 LinkedIn: Neha Jhakra
-
-💻 GitHub: nehajhakra
-
+“The best way to learn machine learning is to get your hands dirty with real projects
